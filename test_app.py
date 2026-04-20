@@ -1,20 +1,18 @@
 # test_app.py
 
 import unittest
-from app import main
-from io import StringIO
-import sys
+from app import add
 
-class TestApp(unittest.TestCase):
+class TestAddition(unittest.TestCase):
 
-    def test_output(self):
-        captured_output = StringIO()
-        sys.stdout = captured_output
+    def test_add_positive(self):
+        self.assertEqual(add(2, 3), 5)
 
-        main()
+    def test_add_negative(self):
+        self.assertEqual(add(-1, -1), -2)
 
-        sys.stdout = sys.__stdout__
-        self.assertIn("Hello this is latashree", captured_output.getvalue())
+    def test_add_mixed(self):
+        self.assertEqual(add(-1, 5), 4)
 
 if __name__ == "__main__":
     unittest.main()
