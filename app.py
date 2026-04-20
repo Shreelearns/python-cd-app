@@ -1,7 +1,9 @@
 # app.py
 
-def main():
-    print("Hello , this is latashree - Simple Python App")
+def add(a, b):
+    return a + b
+
 
 if __name__ == "__main__":
-    main()
+    result = add(2, 3)
+    print("Result:", result)
